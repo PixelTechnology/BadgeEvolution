@@ -1,0 +1,15 @@
+name: BadgeEvolution
+version: '${version}'
+main: com.yuankong.badgeevolution.BadgeEvolution
+authors: [ yuankong ]
+website: https://github.com/yuankong-al
+softdepend:
+  - PlaceholderAPI
+depend:
+  - DragonCore
+  - SX-Attribute
+  - Vault
+  - PlayerPoints
+  - EasyLib
+commands:
+  been:

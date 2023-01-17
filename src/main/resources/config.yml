@@ -1,0 +1,97 @@
+#指令:
+#/been reload -重载
+#/been open -打开界面
+#/been set <等级名> <player> -设置玩家等级
+#/been setlevel <player> <第几级> -设置玩家等级
+#/been info -查看玩家等级
+
+#papi变量
+#%badge_level% -勋章名
+lang:
+  noLevel: "你的勋章等级已经是最高级的了!"
+  noNeedMaterial: "您的材料不足，请准备好足够的材料再进行操作！"
+  noNeedMoney: "金币不足，请准备足够的金币再进行操作!"
+  noNeedPoints: "点券不足，请准备足够的点券再进行操作!"
+  success: "恭喜你升级成功" #%badgeName%
+  info: "§a%info%"
+龙核界面文件名: "勋章" #.yml
+材料配置:  #这个意思和装备升级一样的    是不是可以在sx直接获取到物品然后对比
+  战魂觉醒石:
+    name: "§6§l战魂觉醒石"
+    lore:
+      - '§f可在史莱克城的物品升级NPC处使用'
+      - '§f可将§c[初始]§f升级为§c[觉醒]'
+    type: "339:0"
+  双生战魂觉醒石:
+    name: "§6§l双生战魂觉醒石"
+    lore:
+      - '§f可在史莱克城的物品升级NPC处使用'
+      - '§f可将§c[双生战魂]§f升级为§c[觉醒]'
+    type: "339:0"
+  仙草升级石:
+    name: "§c§l仙草升级石"
+    lore:
+      - '§r⁂ 类型: §c升级石'
+      - '§f可将§e§l仙草§f升级为§e§l仙品'
+    type: "339:0"
+  狂暴之石:
+    name: "§c狂暴之石"
+    lore:
+      - '§r⁂ 类型: §c材料'
+    type: "339:0"
+
+勋章配置:
+  0:  #等级按顺序从小到大
+    name: "青铜0"  #勋章名称，用于papi和info指令查看，可加颜色
+    texture: "勋章/xz/xz0.png"  #徽章显示的图标地址
+    lore: #鼠标放到图标上显示的介绍
+      - '青铜0'
+      - '&f新手上路'
+    #material:
+    #commandEnable:
+    #command:
+    attribute:  #未拥有时的属性介绍
+      - '攻击力+0'
+    displayLore:  #拥有时的详细介绍
+      - '你当前勋章等级是青铜0'
+      - '属性'
+      - '攻击力+0'
+  1:   #等级为1的勋章
+    name: "青铜1"
+    texture: "勋章/xz/xz1.png"  #徽章显示的图标地址
+    lore:   #鼠标放到图标上显示的介绍
+      - '&f新手上路'
+    material:
+      - '战魂觉醒石*1'
+    ifPoints: 0  #如果需要点券升级，需要多少
+    commandEnable: false   #是否开启执行指令
+    command:        #执行以下指令cmd、op、chat
+      - '[cmd]sx give 指令 %player%'
+    attribute:   #等级为1的勋章添加的属性
+      - '攻击力+100'
+      - '防御力+100'
+    displayLore:
+          - '你当前勋章等级是青铜1'
+          - '属性'
+          - '攻击力+100'
+          - '防御力+100'
+  2:   #等级为2的勋章
+    name: "青铜2"
+    texture: "勋章/xz/xz2.png"
+    lore:
+      - '&f新手上路'
+    material:
+      - '战魂觉醒石*2'
+      - '金币*100'
+    ifPoints: 0
+    commandEnable: false
+    command:
+      - '[cmd]sx give 指令 %player%'
+    attribute:
+      - '攻击力+200'
+      - '防御力+200'
+    displayLore:
+      - '你当前勋章等级是青铜2'
+      - '属性'
+      - '攻击力+200'
+      - '防御力+200'
